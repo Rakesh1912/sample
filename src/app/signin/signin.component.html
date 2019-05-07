@@ -1,0 +1,36 @@
+<h2>{{"login" | uppercase}}Details</h2>
+<form (ngSubmit)="onSubmit(heroForm.value)" #heroForm="ngForm">
+    <div>
+        <label>lname:
+            <input required [(ngModel)]="model.name" name="name" #name="ngModel" placeholder="lname">
+            <p>
+                <label>pword:
+                    <input required [(ngModel)]="model.password" name="password" #password="ngModel" placeholder="pword">
+                </label>
+            </p>
+        </label>
+    </div>
+    <button type="submit">Submit</button>
+</form>
+<!---<div *ngIf="dataValue">{{sampleData.name}}</div>
+<div *ngIf="dataValue">{{sampleData.password}}</div>
+<div> <table><li *ngFor="let res of datasource">
+    <td><tr><span class="res">{{res.id}}</span> </tr><tr>{{res.userId}}</tr></td></li></table></div>-->
+   <div>
+    
+   <table>
+        <tr>
+            <th>Id</th>
+            <th>userid</th>
+        
+        </tr>
+        <tr *ngFor="let res of datasource">
+        
+            <td><span class="res">{{res.id}}</span> </td>
+            <td><span class="res">{{res.userId}}</span></td>
+        
+    </tr>
+    </table>
+    
+</div>
+

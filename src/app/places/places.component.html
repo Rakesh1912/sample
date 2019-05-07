@@ -1,0 +1,9 @@
+<h2>My Names</h2>
+<ul class="city">
+  <li *ngFor="let city of places"
+    [class.selected]="city === selected"
+    (click)="onSelect(city)">
+  <span class="badge">{{city.id}}</span> {{city.name}}
+</li>
+</ul>
+<app-place-details [place]="selected"></app-place-details>

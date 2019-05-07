@@ -1,0 +1,38 @@
+    <h2>{{"new user login" | uppercase}}Details</h2>
+<form (ngSubmit)="onSubmit(f.value)" #f="ngForm">
+<div>
+    <label>lname:
+        <input required [(ngModel)]="model.lname" name="lname" #lname="ngModel" minlength="3" placeholder="lname">
+        <div *ngIf="f.submitted && lname.invalid" class="invalid-feedback">
+                <div *ngIf="lname.errors.required">First name is required</div>
+            <div *ngIf="lname.errors.minlength">Minimum is required</div>
+        </div>
+        <p>
+            <label>pword:
+                <input required [(ngModel)]="model.pword" name="pword" #pword="ngModel" placeholder="pword">
+                <div *ngIf="f.submitted && pword.invalid" class="invalid-feedback">
+                    <div *ngIf="pword.errors.required">password is required</div>
+                </div>
+            </label>
+        </p>
+    </label>
+    <label>repword:
+        <input required [(ngModel)]="model.repword" name="repword" #name="ngModel" placeholder="repword">
+          <p>
+            <label>mail:
+                <input required [(ngModel)]="model.mail" name="mail" #mail="ngModel"  pattern="[^ @]*@[^ @]*" placeholder="mail">
+                <div *ngIf="mail.errors && (mail.dirty || mail.touched)">
+                    <div *ngIf="mail.errors.required">email is required</div>
+                    <div *ngIf="mail.errors.pattern">valid required</div>
+                </div>
+            </label>
+        </p>
+    </label>
+</div>
+<button type="submit">Register</button>
+</form>
+<div *ngIf="DataValue">{{SampleData.lname}}</div>
+<div *ngIf="DataValue">{{SampleData.pword}}</div>
+<div *ngIf="DataValue">{{SampleData.repword}}</div>
+<div *ngIf="DataValue">{{SampleData.mail}}</div>
+

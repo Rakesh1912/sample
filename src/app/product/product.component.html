@@ -1,0 +1,27 @@
+
+<!---<div *ngIf="dataValue">{{sampleData.name}}</div>
+<div *ngIf="dataValue">{{sampleData.password}}</div>
+<div> <table><li *ngFor="let res of datasource">
+    <td><tr><span class="res">{{res.id}}</span> </tr><tr>{{res.userId}}</tr></td></li></table></div>-->
+   <div>
+    
+   <table>
+        <tr>
+            <th>Id</th>
+            <th>Userid</th>
+            <th>Body</th>
+            <th>Title</th>
+        
+        </tr>
+        <tr *ngFor="let res of datasource">
+        
+            <td><span class="res">{{res.id}}</span> </td>
+            <td><span class="res">{{res.userId}}</span></td>
+            <td><span class="res">{{res.body}}</span></td>
+            <td><span class="res">{{res.title}}</span></td>
+        
+    </tr>
+    </table>
+    
+</div>
+
